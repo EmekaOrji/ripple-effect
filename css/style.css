@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: #b8ca99;
+  display: grid;
+  place-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button {
+  background-color: #ffbc41;
+  font-size: 4em;
+  font-family: inherit;
+  position: relative;
+  border: none;
+  border-radius: .25em;
+  padding: .4em;
+  overflow: hidden;
+}
+
+.wave, .shrink-wave {
+  width: 1px;
+  height: 1px;
+  background-color: #fff4;
+  opacity: 0;
+  transform-origin: center;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.wave {
+  transform: scale(0);
+  animation: ripple-out 1000ms ease forwards;
+}
+
+.shrink-wave {
+  transform: scale(300);
+  animation: ripple-in 1000ms ease forwards;
+}
+
+@keyframes ripple-out {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(300);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-in {
+  0% {
+    transform: scale(300);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
